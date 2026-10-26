@@ -117,3 +117,16 @@ with torch.no_grad():
 # Save the real trained model
 torch.save(model.state_dict(), 'real_speech_emotion_lstm.pth')
 print("Model saved to 'real_speech_emotion_lstm.pth'")
+
+import matplotlib.pyplot as plt
+
+# Generate Prediction Distribution Plot
+plt.figure(figsize=(8, 5))
+plt.hist(predicted_classes.numpy(), bins=8, alpha=0.75, color='teal', edgecolor='black', rwidth=0.85)
+plt.xticks(range(8), list(emotion_dictionary.values()), rotation=45)
+plt.title('Distribution of Predicted Audio Emotions (RAVDESS)')
+plt.xlabel('Emotion Classification')
+plt.ylabel('Frequency')
+plt.tight_layout()
+plt.savefig('emotion_distribution.png')
+print("Visual plot saved to 'emotion_distribution.png'")
