@@ -17,7 +17,7 @@ This project utilizes the Ryerson Audio-Visual Database of Emotional Speech and 
 The pipeline consists of three core phases: Audio Preprocessing, Feature Extraction, and Sequence Modeling.
 
 ### 1. Feature Extraction (Digital Signal Processing)
-Raw audio waveforms contain extreme dimensional complexity. To make the data interpretable for the neural network, this system leverages the `librosa` library to extract Mel-Frequency Cepstral Coefficients (MFCCs)[cite: 2]. 
+Raw audio waveforms contain extreme dimensional complexity. To make the data interpretable for the neural network, this system leverages the `librosa` library to extract Mel-Frequency Cepstral Coefficients (MFCCs) [cite: 2]. 
 * **MFCCs:** The system extracts 40 sequential MFCCs from each audio file. These coefficients mathematically represent the short-term power spectrum of the sound, capturing critical vocal characteristics such as pitch, timbre, and vocal tract resonance while discarding background noise.
 
 ### 2. Deep Learning Model (LSTM)
